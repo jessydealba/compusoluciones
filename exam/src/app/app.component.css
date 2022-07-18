@@ -1,0 +1,28 @@
+.list {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+th.mat-header-cell{
+    text-align: center;
+}
+.addbutton {
+    margin: 30px 10%;
+}
+.input {
+    width: 200px;
+}
+.form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+}
+
+.table-new {
+    width: 100%;
+}
+  
+.table-new td {
+    padding-right: 20px;
+}

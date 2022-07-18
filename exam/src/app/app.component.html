@@ -1,0 +1,41 @@
+<button class="addbutton" mat-raised-button (click)="New()"> Agregar empresa </button>
+
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8 list" *ngIf="empresas.length > 0 else empty">
+
+  <!-- Nombre Column -->
+  <ng-container matColumnDef="nombre">
+    <th mat-header-cell *matHeaderCellDef> Nombre </th>
+    <td mat-cell *matCellDef="let element"> {{element.nombre}} </td>
+  </ng-container>
+
+  <!-- Tipo de empresa Column -->
+  <ng-container matColumnDef="tipo">
+    <th mat-header-cell *matHeaderCellDef> Tipo de empresa </th>
+    <td mat-cell *matCellDef="let element"> {{element.tipo}} </td>
+  </ng-container>
+
+  <!-- Fecha de constitución Column -->
+  <ng-container matColumnDef="fecha">
+    <th mat-header-cell *matHeaderCellDef> Fecha de constitución </th>
+    <td mat-cell *matCellDef="let element"> {{element.fecha}} </td>
+  </ng-container>
+
+  <!-- Acciones Column -->
+  <ng-container matColumnDef="acciones">
+    <th mat-header-cell *matHeaderCellDef> Acciones </th>
+    <td mat-cell *matCellDef="let element">
+      <button mat-icon-button (click)="Edit(element.id)">
+        <mat-icon>edit</mat-icon>
+      </button>
+      <button mat-icon-button (click)="Delete(element.id)">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+<ng-template #empty>
+  <div class="list">Sin empresas…</div>
+</ng-template>
